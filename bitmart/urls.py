@@ -7,24 +7,12 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'bitmart.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
-    url(r'^$', 'bitmart.views.index'),
-    
-    url(r'^admin/', include(admin.site.urls)),
-    (r'^accounts/', include('registration.backends.default.urls')),
+    url(r'^$',         'bitmart.views.index'), 
+    url(r'^account/',  include('account.urls')),
+    url(r'^wallet/',   include('wallet.urls')),
+    url(r'^listing/',  include('listing.urls')),
+    url(r'^vendor/',   include('vendor.urls')),
 
-    url(r'^account/', include('account.urls')),
-    url(r'^wallet/', include('wallet.urls')),
-
-    url(r'listing/(\d+)?$', 'listing.views.index'),
-    url(r'listing/view/(\d+)/$', 'listing.views.view'),
-    url(r'listing/create/$', 'listing.views.create'),
-    url(r'listing/purchase/(\d+)/$', 'listing.views.purchase'),
-
-    url(r'vendor/$', 'vendor.views.index'),
-    url(r'vendor/register$', 'vendor.views.register'),
-    url(r'vendor/search$', 'vendor.views.search')
-
+    url(r'^admin/',    include(admin.site.urls)),
+    url(r'^accounts/', include('registration.backends.default.urls')),
 ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
