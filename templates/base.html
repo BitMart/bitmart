@@ -57,10 +57,10 @@
 <ul class="nav navbar-nav navbar-right">
 	{% if user.is_authenticated %}
 	<li {% if pagename == "account" %}class="active"{% endif %} ><a href="/account">{{ user.username }}</a></li>
-	<li><a href="{% url 'auth_logout' %}">{% trans "Log out" %}</a></li>
+	<li><a href="{% url 'account.views.logout' %}">{% trans "Log out" %}</a></li>
 
 	{% else %}
-	<li><a href="{% url 'auth_login' %}">{% trans "Log in" %}</a></li>
+	<li><a href="{% url 'account.views.login' %}">{% trans "Log in" %}</a></li>
 	{% endif %}
 </ul>
 

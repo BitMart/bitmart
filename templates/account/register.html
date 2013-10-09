@@ -6,16 +6,19 @@
   {% csrf_token %}
 
   <div class="form-group">
+    {{ errors.username }}
     <label for="id_username">Username</label>
     <input class="form-control" id="id_username" name="username" />
   </div>
 
   <div class="form-group">
+    {{ errors.pin }}
     <label for="id_pin">PIN</label>
     <input class="form-control" id="id_pin" name="pin" type="password" />
   </div>
 
   <div class="form-group">
+    {{ errors.password1  }}
     <label for="id_password1">Password</label>
     <input class="form-control" id="id_password1" name="password1" type="password" />
   </div>
