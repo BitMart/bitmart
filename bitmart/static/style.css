@@ -6,7 +6,13 @@ height: 100%;
 }
 .bitmart { height: auto; min-height: 30%; margin-top: 1em; }
 
-
+li a.main {
+  color: #333;
+  padding: 0;
+}
+li a {
+  padding: 8px 10px;
+}
 
 /*
  * Style twaks

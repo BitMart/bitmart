@@ -14,8 +14,10 @@ class Category(models.Model):
 class Listing(models.Model):
   vendor    = models.ForeignKey(User)
   title     = models.CharField(max_length=64)
+  description \
+            = models.TextField()
   cost      = models.DecimalField(decimal_places=6,max_digits=6)
-  img_uri   = models.CharField(max_length=32)
+  image     = models.FileField(upload_to='listing')
   timestamp = models.DateTimeField(auto_now_add=True)
 
 class Purchase(models.Model):

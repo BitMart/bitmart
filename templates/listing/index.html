@@ -53,7 +53,7 @@
           <div class="well sidebar-nav">
             <ul class="nav">
               {% for cat in categories %}
-              <li>{{ cat.title }}</li>
+              <li><a class="main" href="{% url 'listing.views.index' cat.id %}">{{ cat.title }}</a></li>
                 {% if category == cat.id %}
                   {% for sub in cat.sub_cats %}
                   <li><a href="{% url 'listing.views.index' sub.id %}">{{ sub.title }}</a></li>

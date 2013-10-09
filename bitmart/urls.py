@@ -25,4 +25,6 @@ urlpatterns = patterns('',
     url(r'listing/create/$', 'listing.views.create'),
     url(r'listing/purchase/(\d+)/$', 'listing.views.purchase'),
 
+    url(r'vendor/$', 'vendor.views.index')
+
 ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
