@@ -1,9 +1,8 @@
 from django.shortcuts import render
 from listing.models import *
 
-def index(request, catid=0):
-  if (catid == None): catid = 0 
-  selected = Category.objects.filter(id=catid)
+def index(request, slug=''):
+  selected = Category.objects.filter(slug=slug)
   if (selected.count()>0 and selected.first().parent != None):
     cats = selected
   else:
@@ -11,7 +10,7 @@ def index(request, catid=0):
 
   return render(request, 'listing/index.html', {
     'categories': cats,
-    'category': int(catid)
+    'category': slug
   })
 
 def view(request):

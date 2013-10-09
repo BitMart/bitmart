@@ -27,6 +27,9 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+ABSOLUTE_URL_OVERRIDES = {
+    'auth.user': lambda u: '/account/#%s'%u.username, 
+}
 
 # Application definition
 

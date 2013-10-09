@@ -13,6 +13,8 @@ urlpatterns = patterns('',
     url(r'^listing/',  include('listing.urls')),
     url(r'^vendor/',   include('vendor.urls')),
 
+    url(r'^accounts/profile/$', 'account.views.index'),
+
     url(r'^admin/',    include(admin.site.urls)),
     url(r'^accounts/', include('registration.backends.simple.urls')),
 ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
