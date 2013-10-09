@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Apply to be a Vendor</h2>
+<form role="form">
+  <div class="form-group">
+    <label for="id_vendorname">Vendor name</label>
+    <input class="form-control" id="id_vendorname" placeholder="Vendor name">
+  </div>
+  <div class="form-group">
+    <label for="id_description">Description</label>
+    <textarea class="form-control" id="id_description"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="id_pubkey">Public Key</label>
+    <textarea class="form-control" id="id_pubkey"></textarea>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox">Domestic orders only?
+    </label>
+  </div>
+
+  <p>Your application will be reviewed, check back for your approval status.</p>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+{% endblock %}

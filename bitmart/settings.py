@@ -41,7 +41,8 @@ INSTALLED_APPS = (
     'bitmart',
     'wallet',
     'listing',
-    'account'
+    'account',
+    'vendor'
 )
 
 MIDDLEWARE_CLASSES = (

@@ -2,6 +2,7 @@ from django.db import models
 from django.forms import ModelForm
 from django.contrib.auth.models import User
 from django.contrib import admin
+from vendor.models import Vendor
 
 class Category(models.Model):
   title  = models.CharField(max_length=64)
@@ -13,7 +14,7 @@ class Category(models.Model):
   sub_cats = property(children)
 
 class Listing(models.Model):
-  vendor    = models.ForeignKey(User)
+  vendor    = models.ForeignKey(Vendor)
   title     = models.CharField(max_length=64)
   description \
             = models.TextField()
