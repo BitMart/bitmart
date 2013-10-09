@@ -20,7 +20,7 @@ urlpatterns = patterns('',
     url(r'wallet/create$', 'wallet.views.create'),
     url(r'wallet/send$', 'wallet.views.send'),
 
-    url(r'listing/$', 'listing.views.index'),
+    url(r'listing/(\d+)?$', 'listing.views.index'),
     url(r'listing/view/(\d+)/$', 'listing.views.view'),
     url(r'listing/create/$', 'listing.views.create'),
     url(r'listing/purchase/(\d+)/$', 'listing.views.purchase'),

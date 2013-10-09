@@ -7,6 +7,10 @@ class Category(models.Model):
   parent = models.ForeignKey('self', null=True, blank=True)
   def __unicode__(self): return self.title
 
+  def children(self):
+    return self.category_set.all()
+  sub_cats = property(children)
+
 class Listing(models.Model):
   vendor    = models.ForeignKey(User)
   title     = models.CharField(max_length=64)

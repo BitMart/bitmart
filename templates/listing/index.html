@@ -14,52 +14,52 @@
           </div>
           <div class="row">
             <div class="col-6 col-sm-6 col-lg-4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <h2>Drugs</h2>
+              <p>From Cannabis to painkillers to ketamine, we have it all. Vendor offerings vary by season. Please make sure to leave a review after ordering so others can go off of your experiences.</p>
               <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
             </div><!--/span-->
             <div class="col-6 col-sm-6 col-lg-4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <h2>Forgeries</h2>
+              <p>Fake IDs, new personas. All you need to start a new life. Try not to get caught with one of these, however. Major felony status.</p>
               <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
             </div><!--/span-->
             <div class="col-6 col-sm-6 col-lg-4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <h2>Hardware</h2>
+              <p>Need PC components? We have your back. Ready to get into or out of bitcoin mining? Why not try your hand at selling GPUs here?</p>
               <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
             </div><!--/span-->
             <div class="col-6 col-sm-6 col-lg-4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <h2>Food</h2>
+              <p>Food from everywhere. Kinder eggs, lead-chickens from Korea. Whatever the fuck you want.</p>
               <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
             </div><!--/span-->
             <div class="col-6 col-sm-6 col-lg-4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <h2>Digital Goods</h2>
+              <p>Maybe someone hacked a db and is selling passwords or a stupid vesion of Linux that should be free anyway. IDK, I never go in here.</p>
               <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
             </div><!--/span-->
+            <!--
             <div class="col-6 col-sm-6 col-lg-4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <h2>Custom Orders</h2>
+              <p>Orders just for you, vendors can agree to make listings specifically at your request. Bon appetit.</p>
               <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
-            </div><!--/span-->
+            </div><!--/span-- >
+            -->
           </div><!--/row-->
         </div><!--/span-->
+
 
         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
           <div class="well sidebar-nav">
             <ul class="nav">
-              <li>Sidebar</li>
-              <li class="active"><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li>Sidebar</li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li>Sidebar</li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
+              {% for cat in categories %}
+              <li>{{ cat.title }}</li>
+                {% if category == cat.id %}
+                  {% for sub in cat.sub_cats %}
+                  <li><a href="{% url 'listing.views.index' sub.id %}">{{ sub.title }}</a></li>
+                  {% endfor %}
+                {% endif %}
+              {% endfor %}
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
