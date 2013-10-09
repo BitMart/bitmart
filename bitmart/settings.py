@@ -45,7 +45,8 @@ INSTALLED_APPS = (
     'wallet',
     'listing',
     'account',
-    'vendor'
+    'vendor',
+    'market'
 )
 
 MIDDLEWARE_CLASSES = (
