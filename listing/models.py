@@ -1,4 +1,5 @@
 from django.db import models
+from django.forms import ModelForm
 from django.contrib.auth.models import User
 from django.contrib import admin
 
@@ -19,6 +20,11 @@ class Listing(models.Model):
   cost      = models.DecimalField(decimal_places=6,max_digits=6)
   image     = models.FileField(upload_to='listing')
   timestamp = models.DateTimeField(auto_now_add=True)
+
+class ListingForm(ModelForm):
+  class Meta:
+    model = Listing
+    fields = ['title','description','cost','image']
 
 class Purchase(models.Model):
   buyer     = models.ForeignKey(User)

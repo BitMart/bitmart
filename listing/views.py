@@ -1,6 +1,5 @@
 from django.shortcuts import render
-from listing.models import Category, Listing
-from django.forms import ModelForm
+from listing.models import *
 
 def index(request, catid=0):
   if (catid == None): catid = 0 
@@ -14,11 +13,6 @@ def index(request, catid=0):
     'categories': cats,
     'category': int(catid)
   })
-
-class ListingForm(ModelForm):
-  class Meta:
-    model = Listing
-    fields = ['title','description','cost','image']
 
 def view(request):
   return render(request, 'listing/view.html', {})

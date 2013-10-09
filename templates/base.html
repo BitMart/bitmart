@@ -34,9 +34,9 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="/vendors">Vendors</a></li>
-            <li><a href="/listing">Listings</a></li>
+            <li {% if pagename == "home" %}class="active"{% endif %}><a href="/">Home</a></li>
+            <li {% if pagename == "vendor" %}class="active"{% endif %} ><a href="/vendor">Vendors</a></li>
+            <li {% if pagename == "listing" %}class="active"{% endif %} ><a href="/listing">Listings</a></li>
 <!--
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
@@ -56,7 +56,7 @@
 
 <ul class="nav navbar-nav navbar-right">
 	{% if user.is_authenticated %}
-	<li><a href="/account">{{ user.username }}</a></li>
+	<li {% if pagename == "account" %}class="active"{% endif %} ><a href="/account">{{ user.username }}</a></li>
 	<li><a href="{% url 'auth_logout' %}">{% trans "Log out" %}</a></li>
 
 	{% else %}

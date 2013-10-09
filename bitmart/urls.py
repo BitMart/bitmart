@@ -14,17 +14,17 @@ urlpatterns = patterns('',
     
     url(r'^admin/', include(admin.site.urls)),
     (r'^accounts/', include('registration.backends.default.urls')),
-    (r'^account/', 'account.views.index'),
 
-    url(r'wallet/$', 'wallet.views.index'),
-    url(r'wallet/create$', 'wallet.views.create'),
-    url(r'wallet/send$', 'wallet.views.send'),
+    url(r'^account/', include('account.urls')),
+    url(r'^wallet/', include('wallet.urls')),
 
     url(r'listing/(\d+)?$', 'listing.views.index'),
     url(r'listing/view/(\d+)/$', 'listing.views.view'),
     url(r'listing/create/$', 'listing.views.create'),
     url(r'listing/purchase/(\d+)/$', 'listing.views.purchase'),
 
-    url(r'vendor/$', 'vendor.views.index')
+    url(r'vendor/$', 'vendor.views.index'),
+    url(r'vendor/register$', 'vendor.views.register'),
+    url(r'vendor/search$', 'vendor.views.search')
 
 ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -1,5 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-Vendors welcome~ 
+<h2>Search Vendors</h2>
+<form role="form">
+  <div class="form-group">
+    <label for="id_vendorname">Vendor name</label>
+    <input class="form-control" id="id_vendorname" placeholder="Vendor name">
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox">Domestic only?
+    </label>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+
 {% endblock %}

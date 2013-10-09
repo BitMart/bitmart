@@ -92,6 +92,7 @@ TEMPLATE_DIRS = (
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
+  'bitmart.context_processors.path',
   'bitmart.context_processors.site',
   'django.contrib.auth.context_processors.auth'
 ) 
