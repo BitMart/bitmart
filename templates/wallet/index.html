@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p>
+Total balance: {{ balance }} btc</p>
+
+  {{ wallets }}
+
+  <a href="{% url 'wallet.views.create' %}">New wallet</a> | <a href="{% url 'wallet.views.send' %}">Cash out</a>
+{% endblock %}
